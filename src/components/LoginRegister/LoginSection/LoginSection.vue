@@ -43,7 +43,7 @@ export default {
   },
   methods:{
     async login(){
-      const {username, userpwd, code, phone} =this
+      let {username, userpwd, code, phone} =this
       if (!username) {
         //show Tip
         return
@@ -52,16 +52,18 @@ export default {
         // show Tip
         return
       }
-      this.result = await reqLoginByPwd({username, userpwd})
+      this.result = await reqLoginByPwd({username:username, password:userpwd})
       //保存userid和跳转
-      if (this.result.code === 0) {
-        this.$store.dispatch("saveUserId",this.result.data['id'])
-        this.$router.replace('/homepage')
-      }
-      if (this.result.code === 1) {
-        // show Tip
-        this.username = ''
-        this.userpwd = ''
+      if (this.result.code === 210) {
+        if (this.result.data['pass'] === true) {
+          console.log("passnow")
+          await this.$store.dispatch("saveUserId", this.result.data['userId'])
+          await this.$router.replace('/homepage')
+        }
+        else {
+          username = ''
+          userpwd = ''
+        }
       }
     }
   }

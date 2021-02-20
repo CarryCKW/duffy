@@ -5,7 +5,7 @@ import ajax from "./ajax";
 const BASE_URL = '/api'
 
 //用户名密码登录
-export const reqLoginByPwd = ({name, pwd}) => ajax(BASE_URL + '/login_pwd', {name, pwd}, 'POST')
+export const reqLoginByPwd = ({username, password}) => ajax(BASE_URL + '/login/check', {username, password}, 'POST')
 
 // 获取图片信息
 export const reqGalleryImagesInfos = () => ajax(BASE_URL + '/image/displayGallery', {}, 'GET')
