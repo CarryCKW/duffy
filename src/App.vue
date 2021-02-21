@@ -28,4 +28,5 @@ export default {
 @import "./assets/vendor/animate.min.css";
 @import "./assets/css/theme.css";
 @import "./assets/css/helper.css";
+@import "./assets/css/iview.css";
 </style>

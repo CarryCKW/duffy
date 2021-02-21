@@ -14,7 +14,7 @@
         <button class="btn btn-primary btn-rounded-5x btn-block margin-top-40">Login</button>
       </form>
       <!-- End login form -->
-
+<!--      <alert-tip :alert-text="alertText" v-show="alertShow" @closeTip="closeTip"></alert-tip>-->
     </div> <!-- /.login-wrapper -->
 
   </div> <!-- /.tab-pane -->
@@ -23,9 +23,13 @@
 
 <script>
 import {reqLoginByPwd} from "../../../api";
+import AlertTip from "../../AlertTip/AlertTip";
 
 export default {
   name: "login-section",
+  components:{
+    AlertTip
+  },
   data:function (){
     return {
       username : '',
@@ -45,11 +49,11 @@ export default {
     async login(){
       let {username, userpwd, code, phone} =this
       if (!username) {
-        //show Tip
+        // this.showTip("请输入用户名")
         return
       }
       if (!userpwd) {
-        // show Tip
+        // this.showTip("请输入密码")
         return
       }
       this.result = await reqLoginByPwd({username:username, password:userpwd})
@@ -58,13 +62,31 @@ export default {
         if (this.result.data['pass'] === true) {
           console.log("passnow")
           await this.$store.dispatch("saveUserId", this.result.data['userId'])
+          this.success()
           await this.$router.replace('/homepage')
         }
         else {
           username = ''
           userpwd = ''
+          this.error()
         }
+      }else {
+        this.error()
       }
+    },
+    showTip (alertText) {
+      this.alertText = alertText
+      this.alertShow = true
+    },
+    closeTip () {
+      this.alertText = ''
+      this.alertShow = false
+    },
+    error() {
+      this.$Message.error("登录失败")
+    },
+    success() {
+      this.$Message.success("登录成功")
     }
   }
 }
