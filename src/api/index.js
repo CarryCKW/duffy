@@ -10,4 +10,9 @@ export const reqLoginByPwd = ({username, password}) => ajax(BASE_URL + '/login/c
 // 获取图片信息
 export const reqGalleryImagesInfos = () => ajax(BASE_URL + '/image/displayGallery', {}, 'GET')
 
+//not uesd
 export const reqUserInfo = ({userid}) => ajax(BASE_URL + '/userinfo',{userid}, 'GET')
+
+export const reqUploadImages = (dataBody) => ajax(BASE_URL + '/image/sharing', dataBody, 'POST')
+
+

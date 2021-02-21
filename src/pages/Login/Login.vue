@@ -85,7 +85,7 @@ export default {
   },
   data:function (){
     return {
-      currentTab:"Register",
+      currentTab:"Login",
       tabs:["Login", "Register"]
     }
   },

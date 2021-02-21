@@ -24,7 +24,7 @@ export default new VueRouter({
       path: '/sharing',
       component: Sharing,
       meta:{
-        showHeadNav:true
+        showHeadNav:false
       }
     },
     {

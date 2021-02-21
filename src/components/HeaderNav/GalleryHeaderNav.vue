@@ -21,7 +21,7 @@
                     <!-- End dropdown -->
 
                     <li class="dropdown dropdown-submenu dropdown-hover">
-                      <a href="#0" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sharing </a>
+                      <a href="#0" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="goTo('/sharing')">Sharing </a>
                     </li>
                     <!-- End dropdown -->
                     <li class="dropdown dropdown-submenu dropdown-hover">
