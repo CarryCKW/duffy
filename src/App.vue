@@ -29,4 +29,5 @@ export default {
 @import "./assets/css/theme.css";
 @import "./assets/css/helper.css";
 @import "./assets/css/iview.css";
+@import "./assets/css/swiper.min.css";
 </style>

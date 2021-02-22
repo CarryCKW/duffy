@@ -1,5 +1,5 @@
 export default {
   userid:'esxuxxvqmyrzrlnffdcjmhtnjwjdpvgh',
-  userinfo:{}
-
+  userinfo:{},
+  galleryContentInfos:{}
 }

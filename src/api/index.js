@@ -8,11 +8,15 @@ const BASE_URL = '/api'
 export const reqLoginByPwd = ({username, password}) => ajax(BASE_URL + '/login/check', {username, password}, 'POST')
 
 // 获取图片信息
-export const reqGalleryImagesInfos = () => ajax(BASE_URL + '/image/displayGallery', {}, 'GET')
+// export const reqGalleryImagesInfos = () => ajax(BASE_URL + '/image/displayGallery', {}, 'GET')
 
 //not uesd
 export const reqUserInfo = ({userid}) => ajax(BASE_URL + '/userinfo',{userid}, 'GET')
 
 export const reqUploadImages = (dataBody) => ajax(BASE_URL + '/image/sharing', dataBody, 'POST')
+
+//根据userid ， topic, pageIdx获取图片信息
+export const reqGalleryImagesInfos = ({topic, pageIdx, userId}) => ajax(BASE_URL + '/gallery/images', {topic, pageIdx, userId}, 'GET')
+
 
 

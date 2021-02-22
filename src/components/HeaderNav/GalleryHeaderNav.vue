@@ -56,7 +56,7 @@
     name: "gallery-header-nav",
     methods:{
       goTo(path) {
-        this.$router.replace(path)
+        this.$router.replace(path) //导致回退忘记
       }
     }
   }

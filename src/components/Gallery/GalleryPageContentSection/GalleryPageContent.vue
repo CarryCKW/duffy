@@ -59,214 +59,28 @@
                 <!-- //////////////////
                 // Begin isotope item
                 /////////////////////// -->
-                <div class="isotope-item portraits">
 
-                  <!-- Begin album list item -->
-                  <div class="album-list-item">
-                    <a class="ali-link">
-                      <div class="ali-img-wrap">
-                        <img class="ali-img" src="../../../../static/assets/img/album-list/grid/img-3.jpg" alt="image">
-                      </div>
-                      <div class="ali-caption">
-                        <h2 class="ali-title">Dancing Studio</h2>
-                        <div class="ali-meta">33 photos · 566 views</div>
-                      </div>
-                    </a>
-                    <a href="#0" class="album-share" title="Share this album" data-toggle="modal" data-target="#modal-93365766">
-                      <i class="fa fa-share-alt"></i>
-                    </a>
 
-                    <!-- Begin album share modal -->
-                    <div id="modal-93365766" class="modal fade" tabindex="-1" role="dialog">
-                      <div class="modal-dialog modal-center">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Share to:</h4>
+                <ul v-if="galleryContentInfos.length">
+<!--                  @Click = ??-->
+                  <li v-for="(contentInfo, index) in galleryContentInfos" :key="index" >
+                    <div class="isotope-item">
+                      <div class="album-list-item">
+                        <a>
+<!--                          Image-->
+                          <div class="ali-img-wrap">
+                            <img :src="fixBaseStr(contentInfo.imageBody.imageBase64)" alt="">
                           </div>
-                          <div class="modal-body text-center">
-                            <!-- Begin modal share -->
-                            <div class="modal-share">
-                              <ul>
-                                <li><a href="#0" class="btn btn-social-min btn-facebook btn-rounded-full"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-twitter btn-rounded-full"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-google btn-rounded-full"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-pinterest btn-rounded-full"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-instagram btn-rounded-full"><i class="fa fa-instagram"></i></a></li>
-                              </ul>
-                              <input class="grab-link" type="text" readonly="" value="https://your-site.com/your-portfolio-link" onclick="this.select()">
-                            </div>
-                            <!-- End modal share -->
+<!--                          Brief Info-->
+                          <div class="ali-caption">
+                            <h2 class="ali-title">{{contentInfo.tinnyInfoBody.briefDescript}}</h2>
                           </div>
-                        </div><!-- /.modal-content -->
-                      </div><!-- /.modal-dialog -->
+                        </a>
+                      </div>
                     </div>
-                    <!-- End album share modal -->
+                  </li>
+                </ul>
 
-                  </div>
-                  <!-- End album list item -->
-
-                </div>
-                <!-- End isotope item -->
-
-                <!-- //////////////////
-                // Begin isotope item
-                /////////////////////// -->
-                <div class="isotope-item portraits">
-
-                  <!-- Begin album list item -->
-                  <div class="album-list-item">
-                    <a class="ali-link" href="portfolio-single-2.html">
-                      <div class="ali-img-wrap">
-                        <img class="ali-img" src="assets/img/album-list/grid/img-4.jpg" alt="image">
-                      </div>
-                      <div class="ali-caption">
-                        <h2 class="ali-title">Sit Back and Relax</h2>
-                        <div class="ali-meta">152 photos · 449 views</div>
-                      </div>
-                    </a>
-                    <a href="#0" class="album-share" title="Share this album" data-toggle="modal" data-target="#modal-25875445">
-                      <i class="fa fa-share-alt"></i>
-                    </a>
-
-                    <!-- Begin album share modal -->
-                    <div id="modal-25875445" class="modal fade" tabindex="-1" role="dialog">
-                      <div class="modal-dialog modal-center">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Share to:</h4>
-                          </div>
-                          <div class="modal-body text-center">
-                            <!-- Begin modal share -->
-                            <div class="modal-share">
-                              <ul>
-                                <li><a href="#0" class="btn btn-social-min btn-facebook btn-rounded-full"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-twitter btn-rounded-full"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-google btn-rounded-full"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-pinterest btn-rounded-full"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-instagram btn-rounded-full"><i class="fa fa-instagram"></i></a></li>
-                              </ul>
-                              <input class="grab-link" type="text" readonly="" value="https://your-site.com/your-portfolio-link" onclick="this.select()">
-                            </div>
-                            <!-- End modal share -->
-                          </div>
-                        </div><!-- /.modal-content -->
-                      </div><!-- /.modal-dialog -->
-                    </div>
-                    <!-- End album share modal -->
-
-                  </div>
-                  <!-- End album list item -->
-
-                </div>
-                <!-- End isotope item -->
-
-                <!-- //////////////////
-                // Begin isotope item
-                /////////////////////// -->
-                <div class="isotope-item outdoor">
-
-                  <!-- Begin album list item -->
-                  <div class="album-list-item">
-                    <a class="ali-link" href="portfolio-single-3.html">
-                      <div class="ali-img-wrap">
-                        <img class="ali-img" src="assets/img/album-list/grid/img-6.jpg" alt="image">
-                      </div>
-                      <div class="ali-caption">
-                        <h2 class="ali-title">Say Goodbye</h2>
-                        <div class="ali-meta">211 photos · 890 views</div>
-                      </div>
-                    </a>
-                    <a href="#0" class="album-share" title="Share this album" data-toggle="modal" data-target="#modal-33985640">
-                      <i class="fa fa-share-alt"></i>
-                    </a>
-
-                    <!-- Begin album share modal -->
-                    <div id="modal-33985640" class="modal fade" tabindex="-1" role="dialog">
-                      <div class="modal-dialog modal-center">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Share to:</h4>
-                          </div>
-                          <div class="modal-body text-center">
-                            <!-- Begin modal share -->
-                            <div class="modal-share">
-                              <ul>
-                                <li><a href="#0" class="btn btn-social-min btn-facebook btn-rounded-full"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-twitter btn-rounded-full"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-google btn-rounded-full"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-pinterest btn-rounded-full"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-instagram btn-rounded-full"><i class="fa fa-instagram"></i></a></li>
-                              </ul>
-                              <input class="grab-link" type="text" readonly="" value="https://your-site.com/your-portfolio-link" onclick="this.select()">
-                            </div>
-                            <!-- End modal share -->
-                          </div>
-                        </div><!-- /.modal-content -->
-                      </div><!-- /.modal-dialog -->
-                    </div>
-                    <!-- End album share modal -->
-
-                  </div>
-                  <!-- End album list item -->
-
-                </div>
-                <!-- End isotope item -->
-
-                <!-- //////////////////
-                // Begin isotope item
-                /////////////////////// -->
-                <div class="isotope-item outdoor fashion">
-
-                  <!-- Begin album list item -->
-                  <div class="album-list-item">
-                    <a class="ali-link" href="portfolio-single-4.html">
-                      <div class="ali-img-wrap">
-                        <img class="ali-img" src="assets/img/album-list/grid/img-7.jpg" alt="image">
-                      </div>
-                      <div class="ali-caption">
-                        <h2 class="ali-title">Beauty &amp; Fashion</h2>
-                        <div class="ali-meta">153 photos · 672 views</div>
-                      </div>
-                    </a>
-                    <a href="#0" class="album-share" title="Share this album" data-toggle="modal" data-target="#modal-38740012">
-                      <i class="fa fa-share-alt"></i>
-                    </a>
-
-                    <!-- Begin album share modal -->
-                    <div id="modal-38740012" class="modal fade" tabindex="-1" role="dialog">
-                      <div class="modal-dialog modal-center">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Share to:</h4>
-                          </div>
-                          <div class="modal-body text-center">
-                            <!-- Begin modal share -->
-                            <div class="modal-share">
-                              <ul>
-                                <li><a href="#0" class="btn btn-social-min btn-facebook btn-rounded-full"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-twitter btn-rounded-full"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-google btn-rounded-full"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-pinterest btn-rounded-full"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#0" class="btn btn-social-min btn-instagram btn-rounded-full"><i class="fa fa-instagram"></i></a></li>
-                              </ul>
-                              <input class="grab-link" type="text" readonly="" value="https://your-site.com/your-portfolio-link" onclick="this.select()">
-                            </div>
-                            <!-- End modal share -->
-                          </div>
-                        </div><!-- /.modal-content -->
-                      </div><!-- /.modal-dialog -->
-                    </div>
-                    <!-- End album share modal -->
-
-                  </div>
-                  <!-- End album list item -->
-
-                </div>
-                <!-- End isotope item -->
 
 
 
@@ -289,8 +103,31 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
   name: "gallery-page-context",
+  mounted() {
+    this.fetchAllImages()
+  },
+  methods:{
+    async fetchAllImages() {
+      const result = await this.$store.dispatch('getGalleryAllImages')
+      if (result === true) {
+        console.log('success in fetchAllImages')
+      }else {
+        console.log('error in fetchAllImages')
+      }
+    },
+    fixBaseStr(str) {
+      str = str.replace("data", "data:")
+      str = str.replace("base64",";base64,")
+      return str
+    }
+  },
+  computed:{
+    ...mapState(['galleryContentInfos'])
+  }
 
 }
 </script>

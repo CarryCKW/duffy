@@ -1,6 +1,7 @@
 import {
   RECEIVE_USERINFO,
-  RECEIVE_USERID
+  RECEIVE_USERID,
+  RECEIVE_IMAGE_INFOS
 } from './mutation-types'
 
 export default {
@@ -9,5 +10,8 @@ export default {
   },
   [RECEIVE_USERID] (state, userId) {
     state.userid = userId
+  },
+  [RECEIVE_IMAGE_INFOS] (state, {infos}) {
+    state.galleryContentInfos = infos
   }
 }
