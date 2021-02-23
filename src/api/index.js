@@ -18,5 +18,7 @@ export const reqUploadImages = (dataBody) => ajax(BASE_URL + '/image/sharing', d
 //根据userid ， topic, pageIdx获取图片信息
 export const reqGalleryImagesInfos = ({topic, pageIdx, userId}) => ajax(BASE_URL + '/gallery/images', {topic, pageIdx, userId}, 'GET')
 
+export const reqBlogInfos = ({blogId}) => ajax(BASE_URL + '/bloginfo', {blogId}, 'GET')
+
 
 

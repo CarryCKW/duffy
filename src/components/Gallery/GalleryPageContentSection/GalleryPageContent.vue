@@ -56,17 +56,12 @@
                 <!-- Grid sizer (do not remove!!!) -->
                 <div class="grid-sizer"></div>
 
-                <!-- //////////////////
-                // Begin isotope item
-                /////////////////////// -->
-
-
                 <ul v-if="galleryContentInfos.length">
 <!--                  @Click = ??-->
                   <li v-for="(contentInfo, index) in galleryContentInfos" :key="index" >
-                    <div class="isotope-item">
+                    <div class="isotope-item" @click="gotoBlog(contentInfo.tinnyInfoBody.blogDataId)">
                       <div class="album-list-item">
-                        <a>
+                        <a class="ali-link">
 <!--                          Image-->
                           <div class="ali-img-wrap">
                             <img :src="fixBaseStr(contentInfo.imageBody.imageBase64)" alt="">
@@ -80,9 +75,6 @@
                     </div>
                   </li>
                 </ul>
-
-
-
 
               </div>
               <!-- End isotope items wrap -->
@@ -123,6 +115,12 @@ export default {
       str = str.replace("data", "data:")
       str = str.replace("base64",";base64,")
       return str
+    },
+    gotoBlog(blogId) {
+      console.log('blogid:', blogId)
+      // this.$store.state.currentBlogId = blogId
+      this.$store.dispatch('saveCurrentBlogId', blogId)
+      this.$router.replace('/blog')
     }
   },
   computed:{

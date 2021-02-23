@@ -41,7 +41,6 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-
             <!-- Begin content wrap -->
             <div class="content-wrap min-height-600">
               <div class="row">
@@ -133,6 +132,7 @@ export default {
         });
       }
       console.log('imageBodyList:', this.imageBodyList);
+      this.$router.replace('/homepage')
     },
     constructionImageBody: function (file) {
       return new Promise(((resolve, reject) => {

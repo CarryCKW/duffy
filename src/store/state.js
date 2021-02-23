@@ -1,5 +1,8 @@
 export default {
   userid:'esxuxxvqmyrzrlnffdcjmhtnjwjdpvgh',
   userinfo:{},
-  galleryContentInfos:{}
+  galleryContentInfos:{},
+  currentBlogId:'',
+  currentBlogInfos:{},
+  allBlogInfos:{}
 }

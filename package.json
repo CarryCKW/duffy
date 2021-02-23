@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "jquery": "^3.5.1",
     "swiper": "^6.4.15",
     "view-design": "^4.5.0",
     "vue": "^2.5.2",

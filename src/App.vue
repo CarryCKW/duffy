@@ -1,6 +1,6 @@
 <template>
   <div>
-    <gallery-header-nav username="小咕噜" v-show="$route.meta.showHeadNav"></gallery-header-nav>
+    <gallery-header-nav username="呀吖" v-show="$route.meta.showHeadNav"></gallery-header-nav>
     <router-view></router-view>
   </div>
 </template>

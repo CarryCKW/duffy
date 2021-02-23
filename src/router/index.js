@@ -33,19 +33,25 @@ export default new VueRouter({
       meta:{
         showHeadNav:true
       }
-    },{
+    },
+    {
       path: '/login',
       component: Login,
       meta:{
         showHeadNav:false
       }
-    },{
-      path:'/',
-      component:Domin,
-      meta:{
-        showHeadNav:false
-      }
+    },
+    {
+      path: '/',
+      redirect:'/homepage'
     }
+    // {
+    //   path:'/',
+    //   component:Domin,
+    //   meta:{
+    //     showHeadNav:false
+    //   }
+    // }
   ]
 })
 

@@ -1,12 +1,15 @@
 import {
   RECEIVE_USERINFO,
   RECEIVE_USERID,
-  RECEIVE_IMAGE_INFOS
+  RECEIVE_IMAGE_INFOS,
+  RECEIVE_BLOG_INFOS,
+  RECEIVE_BLOG_ID
 } from './mutation-types'
 import {
   reqGalleryImagesInfos,
   reqLoginByPwd,
-  reqUserInfo
+  reqUserInfo,
+  reqBlogInfos
 } from '../api'
 
 export default {
@@ -36,5 +39,21 @@ export default {
       }
     }
     return false
+  },
+  async getCurrentBlogInfos({commit, state}) {
+    const currentBlogId = state.currentBlogId;
+    if (currentBlogId !== ''){
+      const result = await reqBlogInfos({blogId:currentBlogId})
+      if (result.code === 210) {
+        console.log('获取Blog信息成功')
+        const infos = result.data
+        commit(RECEIVE_BLOG_INFOS, {infos})
+        return true
+      }
+    }
+    return false
+  },
+  async saveCurrentBlogId({commit, state}, curBlId) {
+    commit(RECEIVE_BLOG_ID, curBlId)
   }
 }
