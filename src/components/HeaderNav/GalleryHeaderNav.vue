@@ -10,22 +10,22 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown dropdown-hover">
-                  <a class="dropdown-toggle" @click="goTo('/')">Home <span class="caret-2"><i class="fa fa-chevron-down"></i></span></a>
+                  <a class="dropdown-toggle">Home <span class="caret-2"><i class="fa fa-chevron-down"></i></span></a>
                 </li>
                 <li class="dropdown dropdown-hover">
                   <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery <span class="caret-2"><i class="fa fa-chevron-down"></i></span></a>
                   <ul class="dropdown-menu">
                     <li class="dropdown dropdown-submenu dropdown-hover">
-                      <a href="#0" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="goTo('/homepage')">HomePage</a>
+                      <a class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><router-link to="/homepage">HomePage</router-link></a>
                     </li>
                     <!-- End dropdown -->
 
                     <li class="dropdown dropdown-submenu dropdown-hover">
-                      <a href="#0" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="goTo('/sharing')">Sharing </a>
+                      <a class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><router-link to="/sharing">Sharing </router-link></a>
                     </li>
                     <!-- End dropdown -->
                     <li class="dropdown dropdown-submenu dropdown-hover">
-                      <a href="#0" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="goTo('/blog')">Blog </a>
+                      <a class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><router-link to="/blog">Blog </router-link></a>
                     </li>
                   </ul>
                 </li>

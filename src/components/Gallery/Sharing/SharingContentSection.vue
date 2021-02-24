@@ -109,6 +109,7 @@
 
 <script>
 import {reqUploadImages} from "../../../api";
+import {compressImage} from "../../../filter/CompressImageUtils";
 
 export default {
   name: "sharing-content-section",
@@ -119,20 +120,38 @@ export default {
       topic:'',
       specificDescript:'',
       imageBodyList:[],
+      newImageBodyList:[],
       message:'',
       result:''
     }
   },
   methods:{
+    //https://www.jianshu.com/p/d05f684b715d   他的file.content 为 我的base64
+
     tirggerFile: function (event) {
       var files = event.target.files;
       for (var i = 0;i< files.length; ++i) {
         this.constructionImageBody(files[i]).then(res => {
-          this.imageBodyList.push(res);
+          // console.log('before size:', res['imageBase64'].length)
+          compressImage(res['imageBase64']).then(tempRes => {
+            // console.log('after size:', tempRes.length)
+            let finalRes
+            if (tempRes.length < res['imageBase64'].length) {
+              finalRes = tempRes
+            }else {
+              finalRes = res['imageBase64']
+            }
+            console.log('data base64:', finalRes)
+            var obj = {
+              'fileName':res['fileName'],
+              'imageBase64':finalRes
+            }
+            this.imageBodyList.push(obj);
+          })
+          // this.imageBodyList.push(res);
         });
       }
-      console.log('imageBodyList:', this.imageBodyList);
-      this.$router.replace('/homepage')
+      // console.log('imageBodyList:', this.imageBodyList);
     },
     constructionImageBody: function (file) {
       return new Promise(((resolve, reject) => {
@@ -167,7 +186,7 @@ export default {
         'imageBodyList':this.imageBodyList
       };
       this.result = await reqUploadImages(mainBody);
-
+      this.$router.replace('/homepage')
     },
     checkImageType:function (files) {
       return true;
