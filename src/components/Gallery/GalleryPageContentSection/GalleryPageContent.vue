@@ -28,15 +28,17 @@
 
 
 
-                      <h2 class="filter-heading">Filters</h2>
+                      <h2 class="filter-heading">Topic</h2>
 
                       <!-- Begin isotope filter links -->
                       <div class="isotope-filter-links collapse navbar-collapse no-padding" id="isotope-filter-collapse">
-                        <a class="active" href="#" data-filter="*">all</a>
-                        <a href="#" data-filter=".fashion">Fashion</a>
-                        <a href="#" data-filter=".portraits">Portraits</a>
-                        <a href="#" data-filter=".black-and-white">Black &amp; White</a>
-                        <a href="#" data-filter=".outdoor">Outdoor</a>
+                        <a data-filter="*">all</a>
+                        <a data-filter=".moment">moment</a>
+                        <a data-filter=".travel">travel</a>
+                        <a data-filter=".food">food</a>
+                        <a data-filter=".study">Study</a>
+                        <a data-filter=".Seasons">Seasons</a>
+                        <a data-filter=".ds">あつまれどうぶつの森</a>
                       </div>
                       <!-- End isotope filter links -->
 
@@ -104,11 +106,18 @@ export default {
   },
   methods:{
     async fetchAllImages() {
-      const result = await this.$store.dispatch('getGalleryAllImages')
-      if (result === true) {
-        console.log('success in fetchAllImages')
-      }else {
-        console.log('error in fetchAllImages')
+
+      if (this.$store.state.allBlogInfos.length === 0) {
+        console.log('homepage infos use buffer')
+        console.log('buf data:',this.$store.state.allBlogInfos)
+      }
+      else {
+        const result = await this.$store.dispatch('getGalleryAllImages')
+        if (result === true) {
+          console.log('success in fetchAllImages')
+        }else {
+          console.log('error in fetchAllImages')
+        }
       }
     },
     fixBaseStr(str) {

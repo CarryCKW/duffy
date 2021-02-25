@@ -8,7 +8,7 @@
     ===============================
     * Use class "parallax" to enable parallax effect.
     -->
-    <div class="page-header-image parallax bg-image" ></div>
+    <div class="page-header-image parallax bg-image" style="background-image: url(static/assets/img/headings/heading-11.jpg); background-position: 50% 50%;"></div>
     <!-- End page header image -->
 
     <!-- Element cover -->

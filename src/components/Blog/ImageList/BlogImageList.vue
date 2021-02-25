@@ -16,6 +16,7 @@
 
 <script>
 import mapState from 'vuex'
+import mapGetters from 'vuex'
 export default {
   name: "blog-image-list",
   mounted() {
@@ -30,7 +31,7 @@ export default {
     async fetchCurBlogInfos() {
       const curBlogId = this.$store.state.currentBlogId
       if (curBlogId !== '' && this.$store.state.allBlogInfos.hasOwnProperty(curBlogId)){
-        this.imageBodyList = this.$store.state.currentBlogInfos.imageBodyList
+        this.imageBodyList = this.$store.getters.updateAndGetImageListOfCurrentBlogInfos
         return
       }
       console.log('allBlogInfos do not contain current Blog Infos')
@@ -54,7 +55,8 @@ export default {
     }
   },
   computed:{
-    ...mapState['currentBlogInfos']
+    ...mapState['currentBlogInfos'],
+    ...mapGetters['updateAndGetImageListOfCurrentBlogInfos']
   }
 }
 </script>

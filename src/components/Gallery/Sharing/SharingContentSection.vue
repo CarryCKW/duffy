@@ -185,6 +185,7 @@ export default {
         'specificDescript':this.specificDescript,
         'imageBodyList':this.imageBodyList
       };
+
       this.result = await reqUploadImages(mainBody);
       this.$router.replace('/homepage')
     },
